@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-container">
+    <div class="header-section">
+        <div class="avatar-container">
+            <img src="{% static 'images/mainIm.jpg' %}" alt="Аватар" class="avatar">
+        </div>
+        <div class="discord-btn-container">
+            <a href="{% url 'social:begin' 'discord' %}" class="btn-discord">Увійти через Discord</a>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h1>СЧ ВІТАЄ ТЕБЕ, КОЗАЧЕ!</h1>
+
+        <h2>НОВАЧОК?</h2>
+        <p class="lead">Приєднуйся до нашої основної платформи спілкування</p>
+
+        <a href="https://discord.gg/S2CZMURspv" class="btn-join">Приєднатися</a>
+
+        <div class="stats">
+            <p><strong>виським сучі</strong></p>
+            <p>дк 6:29600 - людей</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

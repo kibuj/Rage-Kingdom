@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 #For Discord
 SOCIAL_AUTH_DISCORD_KEY = os.getenv("SOCIAL_AUTH_DISCORD_KEY")
 SOCIAL_AUTH_DISCORD_SECRET = os.getenv("SOCIAL_AUTH_DISCORD_SECRET")
-SOCIAL_AUTH_DISCORD_REDIRECT_URI = 'http://127.0.0.1:8000/auth'
+SOCIAL_AUTH_DISCORD_REDIRECT_URI = 'http://127.0.0.1:8000/auth/login/discord/'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -116,6 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

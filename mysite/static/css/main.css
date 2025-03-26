@@ -1,0 +1,117 @@
+/* Додайте ці стилі до вашого main.css */
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/mainIm.jpg');
+    background-size: cover;
+}
+
+.main-container {
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #5865F2;
+}
+
+.content-section {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.lead {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.btn-discord {
+    background-color: #5865F2;
+    color: white;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-discord:hover {
+    background-color: #4752c4;
+    transform: translateY(-2px);
+}
+
+.btn-join {
+    background-color: #1E90FF;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-join:hover {
+    background-color: #187bcd;
+    transform: translateY(-2px);
+}
+
+.stats {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.stats p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .btn-discord {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+    .btn-join {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
