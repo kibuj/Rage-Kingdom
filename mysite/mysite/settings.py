@@ -18,12 +18,14 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 #For Discord
 SOCIAL_AUTH_DISCORD_KEY = os.getenv("SOCIAL_AUTH_DISCORD_KEY")
 SOCIAL_AUTH_DISCORD_SECRET = os.getenv("SOCIAL_AUTH_DISCORD_SECRET")
-SOCIAL_AUTH_DISCORD_REDIRECT_URI = 'http://127.0.0.1:8000/auth/login/discord/'
+SOCIAL_AUTH_DISCORD_REDIRECT_URI = 'https://mydiscordapp.loca.lt/auth/complete/discord/'
+SOCIAL_AUTH_DISCORD_SCOPE = ['identify', 'email', 'guilds', 'guilds.members.read']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'mysite.loca.lt']
 
 
 # Application definition
@@ -47,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -127,3 +130,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.discord.DiscordOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+LOGIN_REDIRECT_URL = '/'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
