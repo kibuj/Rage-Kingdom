@@ -33,9 +33,7 @@ async def fetch_members():
             defaults = {
                 'username': member.name,
                 'user_id': str(member.id),
-                'join_date': member.joined_at
             }
-
             discord_user, created = await create_or_get_user(user_id, defaults)
 
             if created:
@@ -45,4 +43,3 @@ async def fetch_members():
 
 TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
 bot.run(TOKEN)
-

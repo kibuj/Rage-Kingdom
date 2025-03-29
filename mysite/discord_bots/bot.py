@@ -27,7 +27,7 @@ async def on_member_join(member):
         user_id=member.id,
         defaults={
             'username': member.name,
-            'join_date': member.joined_at
+            'user_id': str(member.id),
         }
     )
     if created:
