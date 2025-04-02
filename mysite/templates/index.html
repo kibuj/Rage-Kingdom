@@ -9,8 +9,11 @@
         <div class="discord-btn-container">
             <a href="{% url 'social:begin' 'discord' %}" class="btn-discord">Увійти через Discord</a>
         </div>
-    </div>
 
+    </div>
+    <div class = "user-count">
+        <p> Загальна кількість учасників сервера:{{ num_users }}</p>
+    </div>
     <div class="content-section">
         <h1>........</h1>
 

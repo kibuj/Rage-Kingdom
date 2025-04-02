@@ -2,8 +2,17 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
+from catalog.models import DiscordUser
+
+
 def login_view(request):
-    return render(request, 'index.html')
+    num_users = DiscordUser.objects.all().count()
+
+    context = {
+        'num_users': num_users,
+    }
+
+    return render(request, 'index.html', context=context)
 
 @login_required
 def profile(request):
