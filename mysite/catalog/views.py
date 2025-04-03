@@ -8,8 +8,13 @@ from catalog.models import DiscordUser
 def login_view(request):
     num_users = DiscordUser.objects.all().count()
 
+    num_online_users = ((DiscordUser.objects.filter(status="online").count() +
+                        DiscordUser.objects.filter(status="idle").count()) +
+                        DiscordUser.objects.filter(status="dnd").count())
+
     context = {
         'num_users': num_users,
+        'num_online_users': num_online_users,
     }
 
     return render(request, 'index.html', context=context)

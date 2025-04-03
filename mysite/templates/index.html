@@ -1,30 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="flex main-container">
-    <div class="header-section">
-        <div class="avatar-container">
-            <img src="{% static 'images/mainIm.jpg' %}" alt="Аватар" class="avatar">
+<div>
+    <div>
+        <div>
+            <img src="{% static 'images/mainIm.jpg' %}" alt="Аватар">
         </div>
-        <div class="discord-btn-container">
-            <a href="{% url 'social:begin' 'discord' %}" class="btn-discord">Увійти через Discord</a>
-        </div>
-
-    </div>
-    <div class = "flex user-count ">
-        <div class="just-flex">
-            <p class = ""> Загальна кількість учасників сервера:{{ num_users }}</p>
+        <div>
+            <a href="{% url 'social:begin' 'discord' %}" >Увійти через Discord</a>
         </div>
     </div>
-    <div class="content-section">
+    <div>
+        <div>
+            <p> Загальна кількість учасників сервера:{{ num_users }}</p>
+            <p> Загальна кількість онлайн учасників сервера:{{ num_online_users }}</p>
+        </div>
+    </div>
+    <div>
         <h1>........</h1>
 
         <h2>.....</h2>
-        <p class="lead">Приєднуйся до нашої основної платформи спілкування</p>
+        <p>Приєднуйся до нашої основної платформи спілкування</p>
 
-        <a href="https://discord.gg/S2CZMURspv" class="btn-join">Приєднатися</a>
+        <a href="https://discord.gg/S2CZMURspv" >Приєднатися</a>
 
-        <div class="stats">
+        <div>
             <p><strong>......</strong></p>
             <p>............</p>
         </div>
