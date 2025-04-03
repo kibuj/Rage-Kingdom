@@ -12,7 +12,6 @@ django.setup()
 
 from catalog.models import DiscordUser
 
-# Налаштування інтенцій
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
