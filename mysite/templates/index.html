@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="main-container">
+<div class="flex main-container">
     <div class="header-section">
         <div class="avatar-container">
             <img src="{% static 'images/mainIm.jpg' %}" alt="Аватар" class="avatar">
@@ -11,13 +11,15 @@
         </div>
 
     </div>
-    <div class = "user-count">
-        <p> Загальна кількість учасників сервера:{{ num_users }}</p>
+    <div class = "flex user-count ">
+        <div class="just-flex">
+            <p class = ""> Загальна кількість учасників сервера:{{ num_users }}</p>
+        </div>
     </div>
     <div class="content-section">
         <h1>........</h1>
 
-        <h2>........</h2>
+        <h2>.....</h2>
         <p class="lead">Приєднуйся до нашої основної платформи спілкування</p>
 
         <a href="https://discord.gg/S2CZMURspv" class="btn-join">Приєднатися</a>

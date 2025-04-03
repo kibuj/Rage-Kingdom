@@ -1,4 +1,13 @@
-/* Додайте ці стилі до вашого main.css */
+.flex{
+    display: flex;
+
+}
+
+.just-flex{
+    justify-content: flex-end;
+}
+
+
 body {
     background-color: #121212;
     color: white;
@@ -27,8 +36,6 @@ body {
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #5865F2;
@@ -116,9 +123,4 @@ h2 {
     }
 }
 
-.user-count {
-  border: 5px solid;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
+
