@@ -11,7 +11,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 import django
 django.setup()
 
-from catalog.models import DiscordUser
+from catalog.models import DiscordUser, VoiceStatus
 
 intents = discord.Intents.default()
 intents.guilds = True
@@ -32,6 +32,15 @@ def update_user_status(user_id, status):
     if user:
         user.status = status
         user.save()
+
+@sync_to_async
+def update_voice_stat(total_count_in_voice, member_names, channel_name):
+    stats, _ = VoiceStatus.objects.get_or_create(id=1)
+    stats.total_count = total_count_in_voice
+    stats.users_in_voice = member_names
+    stats.channel_name = channel_name
+    stats.save()
+
 
 @bot.event
 async def on_ready():
@@ -60,21 +69,33 @@ async def monitor_voice_channels():
     await bot.wait_until_ready()
     while not bot.is_closed():
         print("\n🔁 Перевірка голосових каналів:")
+        all_members_names = []
+        active_channel_name = ''
+
         for guild in bot.guilds:
-            print(f"🛡 Сервер: {guild.name}")
-            total_count = 0
+            total_count_in_voice = 0
             for channel in guild.voice_channels:
                 members = channel.members
                 if members:
                     count = len(members)
-                    total_count += count
+                    total_count_in_voice += count
                     member_names = ', '.join([member.name for member in members])
+                    all_members_names.append(member_names)
                     print(f"🟢 Канал '{channel.name}': {member_names}")
-                    print(count)
-                    print(total_count)
+                    active_channel_name = channel.name
                 else:
                     pass
-        await asyncio.sleep(20)
+
+            joined_names = ' | '.join(all_members_names)
+            print(f'🔢Загалом у voice:{total_count_in_voice}')
+
+
+        await update_voice_stat(
+            total_count_in_voice = total_count_in_voice,
+            member_names = joined_names,
+            channel_name = active_channel_name)
+
+        await asyncio.sleep(60)
 
 
 

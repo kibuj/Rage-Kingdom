@@ -11,13 +11,12 @@ class DiscordUser(models.Model):
 
 
 
-class VoiceSession(models.Model):
-    user = models.ForeignKey(DiscordUser, on_delete=models.CASCADE)
-    channel_id = models.BigIntegerField()
+class VoiceStatus(models.Model):
+    users_in_voice = models.TextField()
     channel_name = models.CharField(max_length=100)
-    joined_at = models.DateTimeField()
-    left_at = models.DateTimeField(null=True,blank=True)
+    total_count = models.BigIntegerField(default=0)
+    last_updated_at = models.DateTimeField(auto_now=True)
 
 
     def __str__(self):
-        return f"{self.user.username} in {self.channel_name} "
+        return f"{self.channel_name} - {self.total_count} "
