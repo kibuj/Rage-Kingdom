@@ -2,16 +2,18 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
-from catalog.models import DiscordUser
-from discord_bots import *
+from catalog.models import DiscordUser, VoiceStatus
 
 
-def login_view(request,total_count_in_voice ):
+
+def login_view(request):
     num_users = DiscordUser.objects.all().count()
 
     num_online_users = ((DiscordUser.objects.filter(status="online").count() +
                         DiscordUser.objects.filter(status="idle").count()) +
                         DiscordUser.objects.filter(status="dnd").count())
+
+    total_count_in_voice = VoiceStatus.objects.first()
 
     context = {
         'num_users': num_users,
