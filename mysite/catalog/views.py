@@ -13,12 +13,20 @@ def login_view(request):
                         DiscordUser.objects.filter(status="idle").count()) +
                         DiscordUser.objects.filter(status="dnd").count())
 
-    total_count_in_voice = VoiceStatus.objects.first()
+    def shorter_string():
+        total_count_in_voice = VoiceStatus.objects.all()[:10]
+        result = ""
+        for i in total_count_in_voice:
+            raw_str = str(i)
+            short_str = raw_str[:15]
+            result += short_str + "<br>"
+        return result
 
+    short_string = shorter_string()
     context = {
         'num_users': num_users,
         'num_online_users': num_online_users,
-        'users_in_voice': total_count_in_voice
+        'users_in_voice': short_string
     }
 
     return render(request, 'index.html', context=context)

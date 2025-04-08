@@ -19,4 +19,4 @@ class VoiceStatus(models.Model):
 
 
     def __str__(self):
-        return f"{self.total_count} "
+        return f"{self.total_count} - {self.last_updated_at}"
