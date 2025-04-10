@@ -35,12 +35,12 @@ def update_user_status(user_id, status):
 
 @sync_to_async
 def update_voice_stat(total_count_in_voice, member_names, channel_name):
-    stats, _ = VoiceStatus.objects.get_or_create(id=1)
-    stats.total_count = total_count_in_voice
-    stats.users_in_voice = member_names
-    stats.channel_name = channel_name
-    stats.save()
-
+    VoiceStatus.objects.all().delete()
+    stats = VoiceStatus.objects.create(
+        total_count=total_count_in_voice,
+        users_in_voice=member_names,
+        channel_name=channel_name
+    )
 
 @bot.event
 async def on_ready():
