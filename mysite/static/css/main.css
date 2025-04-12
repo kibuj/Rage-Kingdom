@@ -1,1 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between; /* щоб рознести контент по краях */
+}
+
+.top{
+  background-color: #282424;
+}
+
+.icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-top: 2px;
+  margin-left: 25px;
+  margin-bottom: 2px;
+  border: 5px solid black; /* Ось чорна рамка */
+  object-fit: cover; /* Щоб зображення не спотворювалося */
+
+}
+
+.text-from-icon {
+  margin-left: 50px;
+  font-size: 16px;
+
+}

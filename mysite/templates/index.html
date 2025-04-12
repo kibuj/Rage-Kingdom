@@ -2,14 +2,16 @@
 {% load static %}
 {% block content %}
 <div>
-    <div>
-        <div>
-            <img src="{% static 'images/mainIm.jpg' %}" alt="Аватар">
+    <header class = 'flex top space-between'>
+        <div class ='flex'>
+          <img src="{% static 'images/mainIm.jpg' %}" alt="Icon" class="icon">
+          <div class = 'text-from-icon'>Текст</div>
+
         </div>
         <div>
             <a href="{% url 'social:begin' 'discord' %}" >Увійти через Discord</a>
         </div>
-    </div>
+    </header>
     <div>
         <div>
             <p> Загальна кількість учасників сервера:{{ num_users }}</p>
