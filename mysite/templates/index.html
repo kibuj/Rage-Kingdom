@@ -5,11 +5,12 @@
     <header class = 'flex top space-between'>
         <div class ='flex'>
           <img src="{% static 'images/mainIm.jpg' %}" alt="Icon" class="icon">
-          <div class = 'text-from-icon'>Текст</div>
+          <b><div class = 'text-from-icon'>Rage Kingdom</div></b>
 
         </div>
         <div>
-            <a href="{% url 'social:begin' 'discord' %}" >Увійти через Discord</a>
+            <b><a class = 'text-from-icon'> Кастомізація ролей ---></a></b>
+            <a class = 'top-button' href="{% url 'social:begin' 'discord' %}" >Увійти через Discord</a>
         </div>
     </header>
     <div>

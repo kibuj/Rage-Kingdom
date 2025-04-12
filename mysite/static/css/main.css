@@ -9,7 +9,7 @@ body {
 }
 
 .space-between {
-  justify-content: space-between; /* щоб рознести контент по краях */
+  justify-content: space-between;
 }
 
 .top{
@@ -23,13 +23,30 @@ body {
   margin-top: 2px;
   margin-left: 25px;
   margin-bottom: 2px;
-  border: 5px solid black; /* Ось чорна рамка */
-  object-fit: cover; /* Щоб зображення не спотворювалося */
+  border: 5px solid #335da2;
+  object-fit: cover;
 
 }
 
 .text-from-icon {
   margin-left: 50px;
   font-size: 16px;
+  color: #ffffff;
+}
 
+.top-button{
+  background-color: #5865f2;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 25px;
+  border-radius: 8px;
+}
+
+.top-button:hover {
+  background-color: #4752c4;
+}
+
+.text-from-button {
+  font-size: 16px;
+  color: #ffffff;
 }
