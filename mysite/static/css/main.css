@@ -1,6 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #1b1b1b;
+  background-image: url('../images/labradoro.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .flex {
@@ -12,34 +16,33 @@ body {
   justify-content: space-between;
 }
 
-.top{
+.top {
   background-color: #282424;
+  padding: 10px 20px;
 }
 
 .icon {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  margin-top: 2px;
-  margin-left: 25px;
-  margin-bottom: 2px;
-  border: 5px solid #335da2;
+  margin-right: 15px;
+  border: 4px solid #335da2;
   object-fit: cover;
-
 }
 
 .text-from-icon {
-  margin-left: 50px;
-  font-size: 16px;
+  font-size: 18px;
   color: #ffffff;
 }
 
-.top-button{
+.top-button {
   background-color: #5865f2;
   color: white;
   padding: 10px 20px;
-  margin-right: 25px;
+  margin-left: 10px;
   border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .top-button:hover {
@@ -51,6 +54,79 @@ body {
   color: #ffffff;
 }
 
-.info-div{
+/* 🔽 Адаптація для телефонів */
+@media (max-width: 768px) {
+  header.flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
+  .icon {
+    height: 40px;
+    width: 40px;
+    margin: 0;
+  }
+
+  .text-from-icon {
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .top-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .text-from-button {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .space-between {
+    justify-content: center;
+  }
+}
+
+
+.info-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5% 5% 0 5%;
+}
+
+.info-div {
+  width: 100%;
+  max-width: 150px;
+  padding: 1em;
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.info-div-text {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+
+@media (max-width: 480px) {
+  .info-wrapper {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .info-div {
+    width: 90%;
+    max-width: none;
+  }
 }
