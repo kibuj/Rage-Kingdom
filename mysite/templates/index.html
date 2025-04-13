@@ -9,15 +9,16 @@
 
         </div>
         <div>
-            <b><a class = 'text-from-icon'> Кастомізація ролей ---></a></b>
+            <b><a class = 'text-from-icon'> Кастомізація ролей &#8594;</a></b>
             <a class = 'top-button' href="{% url 'social:begin' 'discord' %}" >Увійти через Discord</a>
         </div>
     </header>
-    <div>
+    <div class ='flex space-between'>
+        <div></div>
         <div>
-            <p> Загальна кількість учасників сервера:{{ num_users }}</p>
-            <p> Загальна кількість онлайн учасників сервера:{{ num_online_users }}</p>
-            <p> Загальна кількість учасників сервера в голосовому каналі:{{ users_in_voice|safe }}</p>
+            <p> &#128101;  Нас - :{{ num_users }}</p>
+            <p> &#127774;  Онлайн - ::{{ num_online_users }}</p>
+            <p> &#128172;  Балакають - :{{ users_in_voice|safe }}</p>
         </div>
     </div>
     <div>
