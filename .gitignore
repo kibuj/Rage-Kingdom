@@ -3,3 +3,4 @@
 mysite/.env
 .venv/
 .idea/
+mysite/db.sqlite3
