@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #1b1b1b;
-  background-image: url('../images/labradoro.png');
+  /*background-image: url('../images/фон2.0.jpg');*/
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -18,7 +18,7 @@ body {
 
 .top {
   background-color: #282424;
-  padding: 10px 20px;
+  padding: 0.1rem 2rem;
 }
 
 .icon {
@@ -54,7 +54,6 @@ body {
   color: #ffffff;
 }
 
-/* 🔽 Адаптація для телефонів */
 @media (max-width: 768px) {
   header.flex {
     flex-direction: column;
@@ -130,3 +129,29 @@ body {
     max-width: none;
   }
 }
+
+.main-div {
+  margin: auto;
+  color: #ffffff;
+  font-size: 1.5rem;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2rem;
+}
+
+.main-div-button {
+  background-color: #5865f2;
+  color: white;
+  padding: 1rem 2rem;
+  margin-left: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.main-div-button:hover {
+  background-color: #4752c4;
+}
+
