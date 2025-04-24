@@ -93,7 +93,12 @@
   }
 }
 .margintop {
-  margin-top: 100rem;
+  margin-top: 8rem;
+}
+
+.text_before_slider {
+  text-align: center;
+  color: #ffffff;
 }
 
 .main-image {
